@@ -1,0 +1,18 @@
+{% extends 'base_preguntes.html' %}
+{% block title %} Curiós: Pregunta 4 {% endblock %}
+{% block num_preg %}4/6{% endblock %}
+
+{% block pregunta %} Et recomano que sigui un vi d'alguna de les següents regions, que són regions incipients, amb singularitats que capturen l'essència de la regió {% endblock %}
+
+{% block content %}
+	{% for regio in regions %}
+		<div>
+			<label>
+				<input type="checkbox" name="Regio" value="{{ regio }}"/>
+				{{ regio }}
+			</label>
+		</div>
+	{% endfor %}
+{% endblock %}
+
+{% block anterior %} <a class="anterior" href="{{ url_for('curios.pregunta_3') }}"><b>Anterior</b></a> {% endblock %}

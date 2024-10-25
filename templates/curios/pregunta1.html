@@ -1,0 +1,34 @@
+{% extends 'base_preguntes.html' %}
+{% block title %} Curiós: Pregunta 1 {% endblock %}
+{% block num_preg %}1/6{% endblock %}
+
+{% block pregunta %} Quina categoria de vi estàs buscant? {% endblock %}
+
+{% block content %}
+	<div>
+		<label>
+			<input type="checkbox" name="Tipus" value="Red"/>
+			Negre
+		</label>
+	</div>
+	<div>
+		<label>
+			<input type="checkbox" name="Tipus" value="White"/>
+			Blanc
+		</label>
+	</div>
+	<div>
+		<label>
+			<input type="checkbox" name="Tipus" value="Rose"/>
+			Rosat
+		</label>
+	</div>
+	<div>
+		<label>
+			<input type="checkbox" name="Tipus" value="Sparkling"/>
+			Espumós
+		</label>
+	</div>
+{% endblock %}
+
+{% block anterior %} <a class="anterior off"><b>Anterior</b></a> {% endblock %}

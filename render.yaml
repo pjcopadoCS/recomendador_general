@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: recomendador_general
+    env: python
+    plan: free  # Can change to 'starter', 'standard', etc.
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"  # Assuming your app entry point is in app.py
+    region: oregon  # Change to your preferred region (e.g., 'frankfurt' for EU)
+    envVars:
+      - key: FLASK_ENV
+        value: production  # Ensure the Flask app runs in production mode
+

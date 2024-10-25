@@ -1,0 +1,18 @@
+{% extends 'base_preguntes.html' %}
+{% block title %} Expert: Pregunta 4 {% endblock %}
+{% block num_preg %}4/7{% endblock %}
+
+{% block pregunta %} Et recomano les següents varietats de raïm que estan considerades per molts experts com a les varietats més nobles {% endblock %}
+
+{% block content %}
+	{% for raim in raims %}
+		<div>
+			<label>
+				<input type="checkbox" name="Raim" value="{{ raim }}" {% if raim in nobles %} checked {% endif %}/>
+				{{ raim }}
+			</label>
+		</div>
+	{% endfor %}
+{% endblock %}
+
+{% block anterior %} <a class="anterior" href="{{ url_for('expert.pregunta_3') }}"><b>Anterior</b></a> {% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base_preguntes.html' %}
+{% block title %} Curiós: Pregunta 5 {% endblock %}
+{% block num_preg %}5/6{% endblock %}
+
+{% block pregunta %} Et recomano les següents varietats de raïm que són en general més desconegudes i inclús poden ser considerades exòtiques algunes d'elles {% endblock %}
+
+{% block content %}
+	{% for raim in raims %}
+		<div>
+			<label>
+				<input type="checkbox" name="Raim" value="{{ raim }}" {% if raim in exotiques %} checked {% endif %}/>
+				{{ raim }}
+			</label>
+		</div>
+	{% endfor %}
+{% endblock %}
+
+{% block anterior %} <a class="anterior" href="{{ url_for('curios.pregunta_4') }}"><b>Anterior</b></a> {% endblock %}

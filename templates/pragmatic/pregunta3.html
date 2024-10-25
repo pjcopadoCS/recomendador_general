@@ -1,0 +1,18 @@
+{% extends 'base_preguntes.html' %}
+{% block title %} Pragmàtic: Pregunta 3 {% endblock %}
+{% block num_preg %}3/4{% endblock %}
+
+{% block pregunta %} Quin tipus de vi t'agrada? {% endblock %}
+
+{% block content %}
+	{% for gust, traduccio in gustos %}
+		<div>
+			<label>
+				<input type="checkbox" name="Gust" value="{{ gust }}"/>
+				{{ traduccio }}
+			</label>
+		</div>
+	{% endfor %}
+{% endblock %}
+
+{% block anterior %} <a class="anterior" href="{{ url_for('pragmatic.pregunta_2') }}"><b>Anterior</b></a> {% endblock %}

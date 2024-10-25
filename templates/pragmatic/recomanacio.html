@@ -1,0 +1,40 @@
+{% extends 'base_recomanacio.html' %}
+{% block title %} Expert: Recomanació {% endblock %}
+
+{% block text1 %} Tenint en compte el que ens has explicat et recomanem els següents vins {% endblock %}
+{% block content %}
+	{% if data %}
+		<table border="2">
+			<thead>
+				<tr>
+					<th style="text-align:left">Nom</th>
+					<th>Tipus</th>
+					<th>País</th>
+					<th>Regió</th>
+					<th>Gust</th>
+					<th>Alcohol</th>
+					<!--<th>Maridatge</th>-->
+					<th>Preu</th>
+				</tr>
+			</thead>
+			<tbody>
+			{% for row in data[:10] %}
+				<tr>
+					<td style="text-align:left"><a href="{{ row['Link'] }}" target="_blank">{{ row['Name'] }}</a></td>
+					<td>{{ row['Type'] }}</td>
+					<td>{{ row['Country'] }}</td>
+					<td>{{ row['Region'] }}</td>
+					<td>{{ row['Taste'] }}</td>
+					<td>{{ row['Alcohol'] }}%</td>
+					<!--<td>{{ row['FoodParing'] }}</td>-->
+					<td>{{ row['Price'] }}€</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		Ho sentim, no tenim disponible cap vi que compleixi totes les teves preferències!
+	{% endif %}
+{% endblock %}
+
+{% block anterior %} <a class="anterior" href="{{ url_for('pragmatic.pregunta_' + last) }}"><b>Anterior</b></a> {% endblock %}

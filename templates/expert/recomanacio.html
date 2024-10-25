@@ -1,0 +1,84 @@
+{% extends 'base_recomanacio.html' %}
+{% block title %} Expert: Recomanació {% endblock %}
+
+{% block content %}
+	{% if awarded or not_awarded %}
+		{% if awarded %}
+			<h2>Tenint en compte el que ens has explicat et recomanem els següents vins que han estat premiats</h2>
+			<table border="2" style="margin-bottom: 25px;">
+				<thead>
+					<tr>
+						<th style="text-align:left">Nom</th>
+						<th>Tipus</th>
+						<th>País</th>
+						<th>Regió</th>
+						<th>Varietat de raïm</th>
+						<th>Denominació d'origen</th>
+						<th>Any</th>
+						<th>Alcohol</th>
+						<!--<th>Maridatge</th>-->
+						<th>Preu</th>
+					</tr>
+				</thead>
+				<tbody>
+				{% for row in awarded[:10] %}
+					<tr>
+						<td style="text-align:left"><a href="{{ row['Link'] }}" target="_blank">{{ row['Name'] }}</a></td>
+						<td>{{ row['Type'] }}</td>
+						<td>{{ row['Country'] }}</td>
+						<td>{{ row['Region'] }}</td>
+						<td>{{ row['GrapeVariety'] }}</td>
+						<td>{{ row['DO'] }}</td>
+						<td>{{ row['Year'] }}</td>
+						<td>{{ row['Alcohol'] }}%</td>
+						<!--<td>{{ row['FoodParing'] }}</td>-->
+						<td>{{ row['Price'] }}€</td>
+					</tr>
+				{% endfor %}
+				</tbody>
+			</table>
+		{% endif %}
+		{% if not_awarded %}
+			{% if awarded %}
+				<h2>També són una bona opció aquests altres vins</h2>
+			{% else %}
+				<h2>Una bona opció seria algun d'aquests vins</h2>
+			{% endif %}
+			<table border="2">
+				<thead>
+					<tr>
+						<th style="text-align:left">Nom</th>
+						<th>Tipus</th>
+						<th>País</th>
+						<th>Regió</th>
+						<th>Varietat de raïm</th>
+						<th>Denominació d'origen</th>
+						<th>Any</th>
+						<th>Alcohol</th>
+						<!--<th>Maridatge</th>-->
+						<th>Preu</th>
+					</tr>
+				</thead>
+				<tbody>
+				{% for row in not_awarded[:10] %}
+					<tr>
+						<td style="text-align:left"><a href="{{ row['Link'] }}" target="_blank">{{ row['Name'] }}</a></td>
+						<td>{{ row['Type'] }}</td>
+						<td>{{ row['Country'] }}</td>
+						<td>{{ row['Region'] }}</td>
+						<td>{{ row['GrapeVariety'] }}</td>
+						<td>{{ row['DO'] }}</td>
+						<td>{{ row['Year'] }}</td>
+						<td>{{ row['Alcohol'] }}%</td>
+						<!--<td>{{ row['FoodParing'] }}</td>-->
+						<td>{{ row['Price'] }}€</td>
+					</tr>
+				{% endfor %}
+				</tbody>
+			</table>
+		{% endif %}
+	{% else %}
+		Ho sentim, no tenim disponible cap vi que compleixi totes les teves preferències!
+	{% endif %}
+{% endblock %}
+{% block anterior %} <a class="anterior" href="{{ url_for('expert.pregunta_' + last) }}"><b>Anterior</b></a> {% endblock %}

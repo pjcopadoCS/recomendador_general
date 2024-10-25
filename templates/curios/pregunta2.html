@@ -1,0 +1,18 @@
+{% extends 'base_preguntes.html' %}
+{% block title %} Curiós: Pregunta 2 {% endblock %}
+{% block num_preg %}2/6{% endblock %}
+
+{% block pregunta %} Et recomano que sigui un vi amb un grau d'alcohol de nivell baix o mitjà, doncs els vins més nous i desconeguts que et puc oferir tenen aquesta característica {% endblock %}
+
+{% block content %}
+	{% for categoria, text in alcohol %}
+		<div>
+			<label>
+				<input type="checkbox" name="Alcohol" value="{{ categoria }}" {% if categoria == "low" or categoria == "medium" %} checked {% endif %}/>
+				{{ text }}
+			</label>
+		</div>
+	{% endfor %}
+{% endblock %}
+
+{% block anterior %} <a class="anterior" href="{{ url_for('curios.pregunta_1') }}"><b>Anterior</b></a> {% endblock %}

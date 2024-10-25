@@ -1,0 +1,18 @@
+{% extends 'base_preguntes.html' %}
+{% block title %} Expert: Pregunta 5 {% endblock %}
+{% block num_preg %}5/7{% endblock %}
+
+{% block pregunta %} Tens preferència per alguna d'aquestes denominacions d'origen? {% endblock %}
+
+{% block content %}
+	{% for den_orig in dens_orig %}
+		<div>
+			<label>
+				<input type="checkbox" name="DO" value="{{ den_orig }}"/>
+				{{ den_orig }}
+			</label>
+		</div>
+	{% endfor %}
+{% endblock %}
+
+{% block anterior %} <a class="anterior" href="{{ url_for('expert.pregunta_4') }}"><b>Anterior</b></a> {% endblock %}

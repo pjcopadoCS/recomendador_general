@@ -1,0 +1,18 @@
+{% extends 'base_preguntes.html' %}
+{% block title %} Curiós: Pregunta 3 {% endblock %}
+{% block num_preg %}3/6{% endblock %}
+
+{% block pregunta %} Et recomano que sigui un vi d'algun d'aquests països, que són països emergents en el món del vi, amb novetats interessants {% endblock %}
+
+{% block content %}
+	{% for pais, traduccio in paisos %}
+		<div>
+			<label>
+				<input type="checkbox" name="Pais" value="{{ pais }}" {% if traduccio in emergents %} checked {% endif %}/>
+				{{ traduccio }}
+			</label>
+		</div>
+	{% endfor %}
+{% endblock %}
+
+{% block anterior %} <a class="anterior" href="{{ url_for('curios.pregunta_2') }}"><b>Anterior</b></a> {% endblock %}

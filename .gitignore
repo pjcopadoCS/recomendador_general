@@ -1,0 +1,9 @@
+vins/*
+
+docs/*
+
+
+__pycache__/
+*.py[cod]
+
+.pytest_cache/

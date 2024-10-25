@@ -1,0 +1,68 @@
+html {
+  background-color: #ccc;
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+h1 {
+  color: brown;
+  margin-bottom: 5px;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: left;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+/* th {
+  padding: 10px;
+  background-color: #af2e2e;
+} */
+
+td, th {
+  padding: 10px;
+}
+
+thead {
+  border-bottom: solid 5px #000000; 
+  background-color: #b74141;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #dadada;
+}
+
+span {
+  margin-left: 5px;
+}
+
+a {
+  color: brown; 
+  text-decoration: none; 
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.anterior {
+  margin-right: 40px; 
+  margin-left: 5px;  
+}
+
+.anterior.off {
+  pointer-events: none; 
+  color: gray; 
+  text-decoration: none
+}

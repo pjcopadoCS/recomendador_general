@@ -1,0 +1,18 @@
+{% extends 'base_preguntes.html' %}
+{% block title %} Expert: Pregunta 2 {% endblock %}
+{% block num_preg %}2/7{% endblock %}
+
+{% block pregunta %} Et recomano que sigui un vi d'algun d'aquests països, que es consideren que són dels més reconeguts {% endblock %}
+
+{% block content %}
+	{% for pais, traduccio in paisos %}
+		<div>
+			<label>
+				<input type="checkbox" name="Pais" value="{{ pais }}" {% if traduccio in reconeguts %} checked {% endif %}/>
+				{{ traduccio }}
+			</label>
+		</div>
+	{% endfor %}
+{% endblock %}
+
+{% block anterior %} <a class="anterior" href="{{ url_for('expert.pregunta_1') }}"><b>Anterior</b></a> {% endblock %}

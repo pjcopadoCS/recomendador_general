@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="cat">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Recomanador - {% block title %}{% endblock %}</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename = 'css/recomanacio.css') }}">
+	</head>
+	<body>
+		<h1>Recomanació</h1>
+		<h2>{% block text1 %}{% endblock %}</h2>
+		{% block content %}{% endblock %}
+		{% block extra %}{% endblock %}
+		<footer>
+			{% block anterior %}{% endblock %}
+			<a href="{{ url_for('index') }}"><b>Tornar a l'inici</b></a>
+		</footer>
+	</body>
+</html>

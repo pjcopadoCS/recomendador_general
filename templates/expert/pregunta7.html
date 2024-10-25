@@ -1,0 +1,18 @@
+{% extends 'base_ultima_pregunta.html' %}
+{% block title %} Curiós: Pregunta 7 {% endblock %}
+{% block num_preg %}7/7{% endblock %}
+
+{% block pregunta %} Vols acompanyar el vi amb un dels següents menjars? {% endblock %}
+
+{% block content %}
+	{% for menjar in menjars %}
+		<div>
+			<label>
+				<input type="checkbox" name="Menjar" value="{{ menjar }}"/>
+				{{ menjar }}
+			</label> 
+		</div>
+	{% endfor %}
+{% endblock %}
+
+{% block anterior %} <a class="anterior" href="{{ url_for('expert.pregunta_6') }}"><b>Anterior</b></a> {% endblock %}

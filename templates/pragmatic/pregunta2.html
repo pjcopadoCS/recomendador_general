@@ -1,0 +1,18 @@
+{% extends 'base_preguntes.html' %}
+{% block title %} Pragmàtic: Pregunta 2 {% endblock %}
+{% block num_preg %}2/4{% endblock %}
+
+{% block pregunta %} En quin rang de preu vols que t'ofereixi recomanació? {% endblock %}
+
+{% block content %}
+	{% for categoria, text in preu %}
+		<div>
+			<label>
+				<input type="checkbox" name="Preu" value="{{ categoria }}" {% if categoria == "low" or categoria == "medium"%} checked {% endif %}/>
+				{{ text }}
+			</label>
+		</div>
+	{% endfor %}
+{% endblock %}
+
+{% block anterior %} <a class="anterior" href="{{ url_for('pragmatic.pregunta_1') }}"><b>Anterior</b></a> {% endblock %}

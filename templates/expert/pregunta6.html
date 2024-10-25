@@ -1,0 +1,18 @@
+{% extends 'base_preguntes.html' %}
+{% block title %} Expert: Pregunta 6 {% endblock %}
+{% block num_preg %}6/7{% endblock %}
+
+{% block pregunta %} Tens un interès especial per algun d'aquests anys? {% endblock %}
+
+{% block content %}
+	{% for any in anys %}
+		<div>
+			<label>
+				<input type="checkbox" name="Any" value="{{ any }}"/>
+				{{ any }}
+			</label>
+		</div>
+	{% endfor %}
+{% endblock %}
+
+{% block anterior %} <a class="anterior" href="{{ url_for('expert.pregunta_5') }}"><b>Anterior</b></a> {% endblock %}
