@@ -24,6 +24,10 @@ def crear_app():
 
     return app
 
+app=None
 if __name__ == "__main__":
+    app = crear_app()
+    app.run(debug=True)
+else:
     app = crear_app()
     app.run(debug=True)
