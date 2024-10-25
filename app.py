@@ -30,4 +30,4 @@ if __name__ == "__main__":
     app.run(debug=True)
 else:
     app = crear_app()
-    app.run(debug=True)
+    app.run(port=10000)
