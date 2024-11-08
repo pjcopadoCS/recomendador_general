@@ -16,15 +16,18 @@ def pregunta_1():
     if request.method == 'GET':
         df = pd.read_excel('wines_dataset.xlsx', dtype={'Year': str})
         session['data'] = df.to_dict(orient='records')
+        
     elif request.method == 'POST':
         if request.form.get("Skip"):
             df2 = df
             return redirect(url_for('expert.pregunta_2'))
+        
         if 'Tipus' not in request.form:
             error = True
         else:
             selected_items = request.form.getlist('Tipus')
             df2 = filtratge(df, 'Type', selected_items)
+            
             if request.form.get("Next"):
                 return redirect(url_for('expert.pregunta_2'))
             elif request.form.get('Recomana'):
@@ -53,6 +56,7 @@ def pregunta_2():
             return redirect(url_for('expert.pregunta_3'))
         
         if 'Pais' not in request.form:
+            # Si no s'ha seleccionat cap país
             error = True
         else:
             selected_items = [item.rstrip('/') for item in request.form.getlist('Pais')]
@@ -84,9 +88,11 @@ def pregunta_3():
             return redirect(url_for('expert.pregunta_3'))
 
     if request.method == 'POST':
+        
         if request.form.get("Skip"):
             df4 = df3
             return redirect(url_for('expert.pregunta_4'))
+        
         if 'Regio' not in request.form:
             error = True
         else:        
@@ -118,9 +124,11 @@ def pregunta_4():
             return redirect(url_for('expert.pregunta_5'))   
 
     if request.method == 'POST':
+        
         if request.form.get("Skip"):
             df5 = df4
             return redirect(url_for('expert.pregunta_5'))
+        
         if 'Raim' not in request.form:
             error = True
         else:        
@@ -227,9 +235,10 @@ def pregunta_7():
             return redirect(url_for(RECOMANACIO))
     
     if request.method == 'POST':
-        session['last'] = '7'
+             
         if 'Menjar' not in request.form:
-            return redirect(url_for(RECOMANACIO))
+            df8=df7
+            #return redirect(url_for(RECOMANACIO))
         else:        
             selected_items = request.form.getlist('Menjar')
             if 'Altres' in selected_items:
@@ -240,9 +249,10 @@ def pregunta_7():
                     selected_items = menjars
             regex_pattern = '|'.join(selected_items)
             df8 = df7[df7['FoodParing'].str.contains(regex_pattern, case=False, na=False)]
-            
-            session['data'] = df8.to_dict(orient='records')
-            return redirect(url_for(RECOMANACIO))
+        
+        session['last'] = '7'    
+        session['data'] = df8.to_dict(orient='records')
+        return redirect(url_for(RECOMANACIO))
     
     return render_template('/expert/pregunta7.html', menjars = menjars)
 

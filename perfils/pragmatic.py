@@ -105,7 +105,7 @@ def pregunta_4():
     global df4, df5
     tots_els_menjars = df4['FoodParing'].str.split(',').explode()
     tots_els_menjars = tots_els_menjars.str.strip()
-    menjars = tots_els_menjars.unique().tolist()+['Others']
+    menjars = tots_els_menjars.unique().tolist()+['Altres']
     error = False
     
     if request.method == 'GET':
@@ -120,7 +120,7 @@ def pregunta_4():
             return redirect(url_for(RECOMANACIO))
     
     if request.method == 'POST':
-        session['last'] = '4'
+        
         if 'Menjar' not in request.form:
             df5 = df4
             #return redirect(url_for(RECOMANACIO))
@@ -132,7 +132,8 @@ def pregunta_4():
                     selected_items = menjars
             regex_pattern = '|'.join(selected_items)
             df5 = df4[df4['FoodParing'].str.contains(regex_pattern, case=False, na=False)]
-            
+        
+        session['last'] = '4'    
         session['data'] = df5.to_dict(orient='records')
         return redirect(url_for(RECOMANACIO))
     
