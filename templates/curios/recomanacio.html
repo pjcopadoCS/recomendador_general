@@ -5,7 +5,7 @@
 
 {% block content %}
 	{% if data %}
-		<table border="2">
+		<table id="wineTable_1" border="2">
 			<thead>
 				<tr>
 					<th style="text-align:left">Nom</th>
@@ -19,7 +19,7 @@
 				</tr>
 			</thead>
 			<tbody>
-			{% for row in data[:10] %}
+			{% for row in data[:] %}
 				<tr>
 					<td style="text-align:left"><a href="{{ row['Link'] }}" target="_blank">{{ row['Name'] }}</a></td>
 					<td>{{ row['Type'] }}</td>
