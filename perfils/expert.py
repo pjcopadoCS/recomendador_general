@@ -42,7 +42,9 @@ def pregunta_2():
     global df2, df3
     error = False
     paisos = df2['Country'].unique().tolist()
-    dict_paisos = [(pais, constants.paisos_dict.get(pais, pais)) for pais in paisos]
+    #dict_paisos = [(pais, constants.paisos_dict.get(pais, pais)) for pais in paisos]
+    # Country translation is done just in previous line, so we can use the same variable
+    dict_paisos = [(pais,pais) for pais in paisos]
     reconeguts = constants.paisos_reconeguts
     
     if request.method == 'GET':
@@ -219,13 +221,13 @@ def pregunta_7():
     global df7, df8
     tots_els_menjars = df7['FoodParing'].str.split(',').explode()
     tots_els_menjars = tots_els_menjars.str.strip()
-    menjars = tots_els_menjars.unique().tolist()+['Altres']
+    menjars = tots_els_menjars.unique().tolist()+['Others']
     
     if request.method == 'GET':
         # Case en que només hi ha un tipus de menjar
         if len(menjars) == 1:
             # En cas que sigui altres, no es filtra
-            if 'Altres' not in menjars:
+            if 'Others' not in menjars:
                 regex_pattern = '|'.join(menjars)
                 df8 = df7[df7['FoodParing'].str.contains(regex_pattern, case=False, na=False)]
                 session['data'] = df8.to_dict(orient='records')
@@ -241,8 +243,8 @@ def pregunta_7():
             #return redirect(url_for(RECOMANACIO))
         else:        
             selected_items = request.form.getlist('Menjar')
-            if 'Altres' in selected_items:
-                selected_items.remove('Altres')
+            if 'Others' in selected_items:
+                selected_items.remove('Others')
                 # Problema: si l'usuari selecciona només 'altres' llavors s'ha d'escollir tot, 
                 # si esculla alguna altra opció s'ha d'esborrar 'altres'
                 if len(selected_items) == 0:

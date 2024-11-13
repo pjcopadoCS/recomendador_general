@@ -1,8 +1,8 @@
 {% extends 'base_preguntes.html' %}
-{% block title %} Pragmàtic: Pregunta 3 {% endblock %}
+{% block title %} Pragmatic: Question 3 {% endblock %}
 {% block num_preg %}3/4{% endblock %}
 
-{% block pregunta %} Quin tipus de vi t'agrada? {% endblock %}
+{% block pregunta %} What type of wine do you like? {% endblock %}
 
 {% block content %}
 	{% for gust, traduccio in gustos %}
@@ -15,4 +15,4 @@
 	{% endfor %}
 {% endblock %}
 
-{% block anterior %} <a class="anterior" href="{{ url_for('pragmatic.pregunta_2') }}"><b>Anterior</b></a> {% endblock %}
+{% block anterior %} <a class="anterior" href="{{ url_for('pragmatic.pregunta_2') }}"><b>Previous</b></a> {% endblock %}

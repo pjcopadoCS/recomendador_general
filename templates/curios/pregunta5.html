@@ -1,8 +1,8 @@
 {% extends 'base_preguntes.html' %}
-{% block title %} Curiós: Pregunta 5 {% endblock %}
+{% block title %} Curious: Question 5 {% endblock %}
 {% block num_preg %}5/6{% endblock %}
 
-{% block pregunta %} Et recomano les següents varietats de raïm que són en general més desconegudes i inclús poden ser considerades exòtiques algunes d'elles {% endblock %}
+{% block pregunta %} We recommend the following grape varieties that are generally less known and some of them can even be considered exotic {% endblock %}
 
 {% block content %}
 	{% for raim in raims %}
@@ -15,4 +15,4 @@
 	{% endfor %}
 {% endblock %}
 
-{% block anterior %} <a class="anterior" href="{{ url_for('curios.pregunta_4') }}"><b>Anterior</b></a> {% endblock %}
+{% block anterior %} <a class="anterior" href="{{ url_for('curios.pregunta_4') }}"><b>Previous</b></a> {% endblock %}

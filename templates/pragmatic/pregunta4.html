@@ -1,8 +1,8 @@
 {% extends 'base_ultima_pregunta.html' %}
-{% block title %} Pragmàtic: Pregunta 4 {% endblock %}
+{% block title %} Pragmatic: Question 4 {% endblock %}
 {% block num_preg %}4/4{% endblock %}
 
-{% block pregunta %} Vols acompanyar el vi amb un dels següents menjars? {% endblock %}
+{% block pregunta %} Do you want to accompany the wine with one of the following foods? {% endblock %}
 
 {% block content %}
 	{% for menjar in menjars %}
@@ -15,4 +15,4 @@
 	{% endfor %}
 {% endblock %}
 
-{% block anterior %} <a class="anterior" href="{{ url_for('pragmatic.pregunta_3') }}"><b>Anterior</b></a> {% endblock %}
+{% block anterior %} <a class="anterior" href="{{ url_for('pragmatic.pregunta_3') }}"><b>Previous</b></a> {% endblock %}

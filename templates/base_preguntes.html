@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang="cat">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Recomanador - {% block title %}{% endblock %}</title>
+		<title>Recommender - {% block title %}{% endblock %}</title>
 		<link rel="stylesheet" href="{{ url_for('static', filename = 'css/preguntes.css') }}">
 
 
 	</head>
 	<body>
-		<h1>Pregunta {% block num_preg %}{% endblock %}:</h1>
+		<h1>Question {% block num_preg %}{% endblock %}:</h1>
 		<fieldset style="display: inline-flex;">
 			<legend><h2>{% block pregunta %}{% endblock %}</h2></legend>
 			<form id="form" action="" method="post">
 				<div>
 					<label style="font-size: 20px; color: #5a5757">
 						<input type="checkbox" id="select-all"/>
-						- Selecciona tots -
+						- Select All -
 					</label>
 				</div>
 				{% block content %}
 				{% endblock %}
-				<input id="submit_button" type="submit" name="Next" value="Següent">
-				<input type="submit" name="Recomana" value="Recomana'm">
-				<input type="submit" name="Skip" value="Saltar pregunta">
+				<input id="submit_button" type="submit" name="Next" value="Next">
+				<input type="submit" name="Recomana" value="Recommend me">
+				<input type="submit" name="Skip" value="Skip question">
 			</form>
 		</fieldset>
 		{% if error %}
-			<p> Selecciona almenys una opció abans de continuar</p>
+			<p> Select at least one option before continuing</p>
 		{% endif %}
 		<footer>
 			{% block anterior %}{% endblock %}
-			<a href="{{ url_for('index') }}"><b>Tornar a l'inici</b></a>
+			<a href="{{ url_for('index') }}"><b>Go back to home</b></a>
 		</footer>
 		<script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
 	</body>

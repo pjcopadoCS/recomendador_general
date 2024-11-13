@@ -16,29 +16,29 @@ paisos_dict = {
 }
 
 paisos_reconeguts = [
-    'França',
-    'Itàlia',
-    'Espanya',
-    'Estats Units',
+    'France',
+    'Italy',
+    'Spain',
+    'USA',
     'Argentina',
-    'Xile',
-    'Austràlia',
-    'Sud-àfrica',
-    'Alemanya',
-    'Nova Zelanda',
+    'Chile',
+    'Australia',
+    'South Africa',
+    'Germany',
+    'New Zealand',
 ]
 
 paisos_emergents = [
     'Uruguay',
-    'Brasil',
-    'Mèxic',
-    'Xina',
-    'Índia',
-    'Anglaterra',
-    'Grècia',
-    'Geòrgia',
-    'Líban',
-    'Sud-àfrica',
+    'Brazil',
+    'Mexico',
+    'China',
+    'India',
+    'England',
+    'Greece',
+    'Georgia',
+    'Lebanon',
+    'South Africa',
 ]
 
 varietats_nobles = [
@@ -83,25 +83,25 @@ gustos_dict = {
 }
 
 gustos_ocasional = [
-    'Dolç',
-    'Semi Dolç',
-    'Semi Sec',
+    'Sweet',
+    'Semi Sweet',
+    'Semi Dry',
 ]
 
 rang_alcohol = [8, 12, 14.5]
 
 alcohol_dict = {
-    'low': f'Menys de {rang_alcohol[0]}%',
-    'medium': f'Entre {rang_alcohol[0]}% i {rang_alcohol[1]}%',
-    'high': f'Entre {rang_alcohol[1]}% i {rang_alcohol[2]}%',
-    'very_high': f'Més de {rang_alcohol[2]}%',
+    'low': f'Less than {rang_alcohol[0]}%',
+    'medium': f'Between {rang_alcohol[0]}% and {rang_alcohol[1]}%',
+    'high': f'Between {rang_alcohol[1]}% and {rang_alcohol[2]}%',
+    'very_high': f'More than {rang_alcohol[2]}%',
 }
 
 rang_preu = [20, 50, 100]
 
 preu_dict = {
-    'low': f'Menys de {rang_preu[0]}€',
-    'medium': f'Entre {rang_preu[0]}€ i {rang_preu[1]}€',
-    'high': f'Entre {rang_preu[1]}€ i {rang_preu[2]}€',
-    'very_high': f'Més de {rang_preu[2]}€',
+    'low': f'Less than {rang_preu[0]}€',
+    'medium': f'Between {rang_preu[0]}€ and {rang_preu[1]}€',
+    'high': f'Between {rang_preu[1]}€ and {rang_preu[2]}€',
+    'very_high': f'More than {rang_preu[2]}€',
 }

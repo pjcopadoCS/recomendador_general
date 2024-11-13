@@ -1,8 +1,8 @@
 {% extends 'base_preguntes.html' %}
-{% block title %} Pragmàtic: Pregunta 2 {% endblock %}
+{% block title %} Pragmatic: Question 2 {% endblock %}
 {% block num_preg %}2/4{% endblock %}
 
-{% block pregunta %} En quin rang de preu vols que t'ofereixi recomanació? {% endblock %}
+{% block pregunta %} In which price range would you like to receive recommendations? {% endblock %}
 
 {% block content %}
 	{% for categoria, text in preu %}
@@ -15,4 +15,4 @@
 	{% endfor %}
 {% endblock %}
 
-{% block anterior %} <a class="anterior" href="{{ url_for('pragmatic.pregunta_1') }}"><b>Anterior</b></a> {% endblock %}
+{% block anterior %} <a class="anterior" href="{{ url_for('pragmatic.pregunta_1') }}"><b>Previous</b></a> {% endblock %}

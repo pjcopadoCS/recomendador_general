@@ -89,12 +89,13 @@ def pregunta_2():
     return render_template('/ocasional/pregunta2.html', alcohol = dict_alcohol, error = error)
 
 
-@ocasional_bp.route('/ocasional_pregunta3', methods = ['GET', 'POST'])
+@ocasional_bp.route('/ocasional_pregunta_3', methods = ['GET', 'POST'])
 def pregunta_3():
     
     global df3, df4
     gustos = df3['Taste'].unique().tolist()
-    dict_gustos = [(gust, constants.gustos_dict.get(gust, gust)) for gust in gustos]
+    #dict_gustos = [(gust, constants.gustos_dict.get(gust, gust)) for gust in gustos]
+    dict_gustos = [(gust, gust) for gust in gustos]
     gustos_ocasional = constants.gustos_ocasional
 
     if request.method == 'GET':

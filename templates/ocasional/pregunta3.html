@@ -1,8 +1,8 @@
 {% extends 'base_ultima_pregunta.html' %}
-{% block title %} Ocasional: Pregunta 3 {% endblock %}
+{% block title %} Occasional: Question 3 {% endblock %}
 {% block num_preg %}3/3{% endblock %}
 
-{% block pregunta %} Et recomano que sigui un vi lleuger, jove amb un cert nivell de dolçor {% endblock %}
+{% block pregunta %} I recommend that it be a light, young wine with a certain level of sweetness {% endblock %}
 
 {% block content %}
 	{% for gust, traduccio in gustos %}
@@ -15,4 +15,4 @@
 	{% endfor %}
 {% endblock %}
 
-{% block anterior %} <a class="anterior" href="{{ url_for('ocasional.pregunta_2') }}"><b>Anterior</b></a> {% endblock %}
+{% block anterior %} <a class="anterior" href="{{ url_for('ocasional.pregunta_2') }}"><b>Previous</b></a> {% endblock %}

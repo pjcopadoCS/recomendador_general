@@ -1,8 +1,8 @@
 {% extends 'base_preguntes.html' %}
-{% block title %} Curiós: Pregunta 2 {% endblock %}
+{% block title %} Curious: Question 2 {% endblock %}
 {% block num_preg %}2/6{% endblock %}
 
-{% block pregunta %} Et recomano que sigui un vi amb un grau d'alcohol de nivell baix o mitjà, doncs els vins més nous i desconeguts que et puc oferir tenen aquesta característica {% endblock %}
+{% block pregunta %} We recommend choosing a wine with a low or medium alcohol level, as the newest and lesser-known wines I can offer have this characteristic. {% endblock %}
 
 {% block content %}
 	{% for categoria, text in alcohol %}
@@ -15,4 +15,4 @@
 	{% endfor %}
 {% endblock %}
 
-{% block anterior %} <a class="anterior" href="{{ url_for('curios.pregunta_1') }}"><b>Anterior</b></a> {% endblock %}
+{% block anterior %} <a class="anterior" href="{{ url_for('curios.pregunta_1') }}"><b>Previous</b></a> {% endblock %}

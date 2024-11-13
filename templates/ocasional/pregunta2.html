@@ -1,8 +1,8 @@
 {% extends 'base_preguntes.html' %}
-{% block title %} Ocasional: Pregunta 2 {% endblock %}
+{% block title %} Occasional: Question 2 {% endblock %}
 {% block num_preg %}2/3{% endblock %}
 
-{% block pregunta %} Et recomano que sigui un vi amb un grau d'alcohol de nivell baix o mitjà, doncs podràs gaudir-ne encara que no tinguis molta afició als vins i podràs apreciar millor els subtils matisos i sabors que ofereix el vi {% endblock %}
+{% block pregunta %} We recommend that it be a wine with a low or medium alcohol level, as you will be able to enjoy it even if you are not very fond of wines and you will be able to better appreciate the subtle nuances and flavors that the wine offers {% endblock %}
 
 {% block content %}
 	{% for categoria, text in alcohol %}
@@ -15,4 +15,4 @@
 	{% endfor %}
 {% endblock %}
 
-{% block anterior %} <a class="anterior" href="{{ url_for('ocasional.pregunta_1') }}"><b>Anterior</b></a> {% endblock %}
+{% block anterior %} <a class="anterior" href="{{ url_for('ocasional.pregunta_1') }}"><b>Previous</b></a> {% endblock %}

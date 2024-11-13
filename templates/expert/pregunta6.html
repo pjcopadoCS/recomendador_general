@@ -1,8 +1,8 @@
 {% extends 'base_preguntes.html' %}
-{% block title %} Expert: Pregunta 6 {% endblock %}
+{% block title %} Expert: Question 6 {% endblock %}
 {% block num_preg %}6/7{% endblock %}
 
-{% block pregunta %} Tens un interès especial per algun d'aquests anys? {% endblock %}
+{% block pregunta %} Do you have a special interest in any of these years? {% endblock %}
 
 {% block content %}
 	{% for any in anys %}
@@ -15,4 +15,4 @@
 	{% endfor %}
 {% endblock %}
 
-{% block anterior %} <a class="anterior" href="{{ url_for('expert.pregunta_5') }}"><b>Anterior</b></a> {% endblock %}
+{% block anterior %} <a class="anterior" href="{{ url_for('expert.pregunta_5') }}"><b>Previous</b></a> {% endblock %}

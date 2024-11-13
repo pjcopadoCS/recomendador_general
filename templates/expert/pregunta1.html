@@ -1,34 +1,34 @@
 {% extends 'base_preguntes.html' %}
-{% block title %} Expert: Pregunta 1 {% endblock %}
+{% block title %} Expert: Question 1 {% endblock %}
 {% block num_preg %}1/7{% endblock %}
 
-{% block pregunta %} Quina categoria de vi estàs buscant? {% endblock %}
+{% block pregunta %} Which category of wine are you looking for?  {% endblock %}
 
 {% block content %}
 	<div>
 		<label>
 			<input type="checkbox" name="Tipus" value="Red"/>
-			Negre
+			Black
 		</label>
 	</div>
 	<div>
 		<label>
 			<input type="checkbox" name="Tipus" value="White"/>
-			Blanc
+			White
 		</label>
 	</div>
 	<div>
 		<label>
 			<input type="checkbox" name="Tipus" value="Rose"/>
-			Rosat
+			Rosé
 		</label>
 	</div>
 	<div>
 		<label>
 			<input type="checkbox" name="Tipus" value="Sparkling"/>
-			Espumós
+			Sparkling
 		</label>
 	</div>
 {% endblock %}
 
-{% block anterior %} <a class="anterior off"><b>Anterior</b></a> {% endblock %}
+{% block anterior %} <a class="anterior off"><b>Previous</b></a> {% endblock %}

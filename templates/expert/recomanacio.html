@@ -1,23 +1,23 @@
 {% extends 'base_recomanacio.html' %}
-{% block title %} Expert: Recomanació {% endblock %}
+{% block title %} Expert: Recommendation {% endblock %}
 
 {% block content %}
 	{% if awarded or not_awarded %}
 		{% if awarded %}
-			<h2>Tenint en compte el que ens has explicat et recomanem els següents vins que han estat premiats</h2>
+			<h2>Based on what you have told us, we recommend the following award-winning wines</h2>
 			<table border="2" style="margin-bottom: 25px;">
 				<thead>
 					<tr>
 						<th style="text-align:left">Nom</th>
-						<th>Tipus</th>
-						<th>País</th>
-						<th>Regió</th>
-						<th>Varietat de raïm</th>
-						<th>Denominació d'origen</th>
-						<th>Any</th>
+						<th>Type</th>
+						<th>Country</th>
+						<th>Region</th>
+						<th>Grape Variety</th>
+						<th>Designation of Origin</th>
+						<th>Year</th>
 						<th>Alcohol</th>
-						<!--<th>Maridatge</th>-->
-						<th>Preu</th>
+						<!--<th>Food Pairing</th>-->
+						<th>Price</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -40,23 +40,23 @@
 		{% endif %}
 		{% if not_awarded %}
 			{% if awarded %}
-				<h2>També són una bona opció aquests altres vins</h2>
+				<h2>These other wines are also a good option</h2>
 			{% else %}
-				<h2>Una bona opció seria algun d'aquests vins</h2>
+				<h2>A good option would be one of these wines</h2>
 			{% endif %}
 			<table border="2">
 				<thead>
 					<tr>
 						<th style="text-align:left">Nom</th>
-						<th>Tipus</th>
-						<th>País</th>
-						<th>Regió</th>
-						<th>Varietat de raïm</th>
-						<th>Denominació d'origen</th>
-						<th>Any</th>
+						<th>Type</th>
+						<th>Country</th>
+						<th>Region</th>
+						<th>Grape Variety</th>
+						<th>Designation of Origin</th>
+						<th>Year</th>
 						<th>Alcohol</th>
-						<!--<th>Maridatge</th>-->
-						<th>Preu</th>
+						<!--<th>Food Pairing</th>-->
+						<th>Price</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -78,7 +78,7 @@
 			</table>
 		{% endif %}
 	{% else %}
-		Ho sentim, no tenim disponible cap vi que compleixi totes les teves preferències!
+		We are sorry, we do not have any wines that match all your preferences!
 	{% endif %}
 {% endblock %}
-{% block anterior %} <a class="anterior" href="{{ url_for('expert.pregunta_' + last) }}"><b>Anterior</b></a> {% endblock %}
+{% block anterior %} <a class="anterior" href="{{ url_for('expert.pregunta_' + last) }}"><b>Previous</b></a> {% endblock %}

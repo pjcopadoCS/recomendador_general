@@ -1,8 +1,8 @@
 {% extends 'base_preguntes.html' %}
-{% block title %} Expert: Pregunta 4 {% endblock %}
+{% block title %} Expert: Qustion 4 {% endblock %}
 {% block num_preg %}4/7{% endblock %}
 
-{% block pregunta %} Et recomano les següents varietats de raïm que estan considerades per molts experts com a les varietats més nobles {% endblock %}
+{% block pregunta %} We recommend the following grape varieties that are considered by many experts to be the noblest varieties {% endblock %}
 
 {% block content %}
 	{% for raim in raims %}
@@ -15,4 +15,4 @@
 	{% endfor %}
 {% endblock %}
 
-{% block anterior %} <a class="anterior" href="{{ url_for('expert.pregunta_3') }}"><b>Anterior</b></a> {% endblock %}
+{% block anterior %} <a class="anterior" href="{{ url_for('expert.pregunta_3') }}"><b>Previous</b></a> {% endblock %}

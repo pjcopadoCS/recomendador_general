@@ -85,7 +85,8 @@ def pregunta_3():
     global df3, df4
     error = False
     paisos = df3['Country'].unique().tolist()
-    dict_paisos = [(pais, constants.paisos_dict.get(pais, pais)) for pais in paisos]
+    #dict_paisos = [(pais, constants.paisos_dict.get(pais, pais)) for pais in paisos]
+    dict_paisos = [(pais, pais) for pais in paisos] # Evitar la traducció al català
     emergents = constants.paisos_emergents
     
     
@@ -197,11 +198,11 @@ def pregunta_6():
     global df6, df7
     tots_els_menjars = df6['FoodParing'].str.split(',').explode()
     tots_els_menjars = tots_els_menjars.str.strip()
-    menjars = tots_els_menjars.unique().tolist()+['Altres']
+    menjars = tots_els_menjars.unique().tolist()+['Others']
     
     if request.method == 'GET':
         if len(menjars) == 1:
-            if 'Altres' not in menjars:
+            if 'Others' not in menjars:
                 regex_pattern = '|'.join(menjars)
                 df7 = df6[df6['FoodParing'].str.contains(regex_pattern, case=False, na=False)]
                 session['data'] = df7.to_dict(orient='records')
@@ -216,8 +217,8 @@ def pregunta_6():
             return redirect(url_for(RECOMANACIO))
         else:        
             selected_items = request.form.getlist('Menjar')
-            if 'Altres' in selected_items:
-                selected_items.remove('Altres')
+            if 'Others' in selected_items:
+                selected_items.remove('Others')
                 if len(selected_items) == 0:
                     selected_items = menjars
             regex_pattern = '|'.join(selected_items)

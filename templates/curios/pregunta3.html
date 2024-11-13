@@ -1,8 +1,8 @@
 {% extends 'base_preguntes.html' %}
-{% block title %} Curiós: Pregunta 3 {% endblock %}
+{% block title %} Curious: Question 3 {% endblock %}
 {% block num_preg %}3/6{% endblock %}
 
-{% block pregunta %} Et recomano que sigui un vi d'algun d'aquests països, que són països emergents en el món del vi, amb novetats interessants {% endblock %}
+{% block pregunta %} We recommend that it be a wine from one of these countries, which are emerging countries in the wine world, with interesting novelties {% endblock %}
 
 {% block content %}
 	{% for pais, traduccio in paisos %}
@@ -15,4 +15,4 @@
 	{% endfor %}
 {% endblock %}
 
-{% block anterior %} <a class="anterior" href="{{ url_for('curios.pregunta_2') }}"><b>Anterior</b></a> {% endblock %}
+{% block anterior %} <a class="anterior" href="{{ url_for('curios.pregunta_2') }}"><b>Previous</b></a> {% endblock %}

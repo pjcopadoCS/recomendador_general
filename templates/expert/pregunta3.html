@@ -1,8 +1,8 @@
 {% extends 'base_preguntes.html' %}
-{% block title %} Expert: Pregunta 3 {% endblock %}
+{% block title %} Expert: Question 3 {% endblock %}
 {% block num_preg %}3/7{% endblock %}
 
-{% block pregunta %} Et recomano que sigui un vi d'alguna de les següents regions, que tenen un alt prestigi internacional {% endblock %}
+{% block pregunta %} We recommend that it be a wine from one of the following regions, which have high international prestige {% endblock %}
 
 {% block content %}
 	{% for regio in regions %}
@@ -15,4 +15,4 @@
 	{% endfor %}
 {% endblock %}
 
-{% block anterior %} <a class="anterior" href="{{ url_for('expert.pregunta_2') }}"><b>Anterior</b></a> {% endblock %}
+{% block anterior %} <a class="anterior" href="{{ url_for('expert.pregunta_2') }}"><b>Previous</b></a> {% endblock %}

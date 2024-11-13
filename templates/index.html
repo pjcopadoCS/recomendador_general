@@ -1,22 +1,22 @@
 {% extends 'base.html' %}
-{% block title %} Inici {% endblock %}
+{% block title %} Home {% endblock %}
 
 {% block content %}
-	<h1>Benvingut al Recomanador general de vins</h1>
-	<h2>Amb quin perfil et sents més identificat?</h2>
+	<h1>Welcome to the General Wine Recommender</h1>
+	<h2>Which profile do you identify with the most?</h2>
 	<nav>
 		<ul>
 				<fieldset style="border-bottom:0;">
-					<li><a href="{{ url_for('expert.pregunta_1') }}">Expert</a><span>> Tens un ampli coneixement sobre el món del vi i t'agrada tastar diferents tipus i estils de vins.<br>> Busques vins de qualitat, amb personalitat i prestigi.</span></li>
+					<li><a href="{{ url_for('expert.pregunta_1') }}">Expert</a><span> You have extensive knowledge about the world of wine and enjoy tasting different types and styles.<br> You look for quality wines with personality and prestige.</span></li>
 				</fieldset> 
 				<fieldset style="border-bottom:0;">
-					<li><a href="{{ url_for('curios.pregunta_1') }}">Curiós</a><span>> Tens interès per aprendre sobre el vi i tastar noves opcions.<br>> Busques vins que et sorprenguin, que t'aportin alguna cosa diferent i que et permetin ampliar el paladar.</span></li>
+					<li><a href="{{ url_for('curios.pregunta_1') }}">Curious</a><span> You are interested in learning about wine and trying new options.<br> You seek wines that surprise you, offering something different and expanding your palate.</span></li>
 				</fieldset> 
 				<fieldset style="border-bottom:0;"> 
-					<li><a href="{{ url_for('pragmatic.pregunta_1') }}">Pragmàtic</a><span>> Busques vins que compleixin les teves expectatives i que t'ofereixin una bona relació qualitat-preu.<br>> No t'importa gaire l'origen, la varietat o l'estil del vi, sempre que sigui del teu gust i s'adapti al teu pressupost.</span></li>
+					<li><a href="{{ url_for('pragmatic.pregunta_1') }}">Pragmatic</a><span> You look for wines that meet your expectations and offer good value for money.<br> You don’t mind the origin, variety, or style of the wine as long as it suits your taste and budget.</span></li>
 				</fieldset> 
 				<fieldset>
-					<li><a href="{{ url_for('ocasional.pregunta_1') }}">Ocasional</a><span>> No tens gaire afició pel vi i el consumeixes de manera esporàdica o per compromís.<br>> No tens massa coneixement per triar un vi i prefereixes que et recomanin vins els amics o els experts.</span></li>
+					<li><a href="{{ url_for('ocasional.pregunta_1') }}">Occasional</a><span> Occasional</a><span>> You don’t have a strong interest in wine and consume it sporadically or for social occasions.<br> You don't have much knowledge for choosing a wine and prefer recommendations from friends or epxerts.</span></li>
 				</fieldset>
 		</ul>
 	</nav>

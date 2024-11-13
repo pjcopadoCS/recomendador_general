@@ -1,7 +1,7 @@
 {% extends 'base_recomanacio.html' %}
-{% block title %} Expert: Recomanació {% endblock %}
+{% block title %} Curious: Recommendation {% endblock %}
 
-{% block text1 %} Tenint en compte el que ens has explicat et recomanem els següents vins {% endblock %}
+{% block text1 %} Based on what you have told us, we recommend the following wines {% endblock %}
 
 {% block content %}
 	{% if data %}
@@ -9,13 +9,13 @@
 			<thead>
 				<tr>
 					<th style="text-align:left">Nom</th>
-					<th>Tipus</th>
-					<th>País</th>
-					<th>Regió</th>
-					<th>Varietat de raïm</th>
+					<th>Type</th>
+					<th>Country</th>
+					<th>Region</th>
+					<th>Grape Variety</th>
 					<th>Alcohol</th>
-					<!--<th>Maridatge</th>-->
-					<th>Preu</th>
+					<!--<th>Food Pairing</th>-->
+					<th>Price</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -34,14 +34,14 @@
 			</tbody>
 		</table>
 	{% else %}
-		Ho sentim, no tenim disponible cap vi que compleixi totes les teves preferències!
+		Sorry, we don't have any wines that match all your preferences!
 	{% endif %}
 {% endblock %}
 
 {% block extra %}
-	<span>Si t'interessa saber més de les bodegues o si vols consultar guies per entendre de vi, pots consultar el nostre 
+	<span>If you are interested in learning more about wineries or if you want to consult guides to understand wine, you can check out our 
 		<a href="https://disndis.com/blogs/blog" target="_blank">blog</a>!
 	</span>
 {% endblock %}
 
-{% block anterior %} <a class="anterior" href="{{ url_for('curios.pregunta_' + last) }}"><b>Anterior</b></a> {% endblock %}
+{% block anterior %} <a class="anterior" href="{{ url_for('curios.pregunta_' + last) }}"><b>Previous</b></a> {% endblock %}

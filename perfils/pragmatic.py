@@ -73,7 +73,8 @@ def pregunta_3():
     global df3, df4
     error = False
     gustos = df3['Taste'].unique().tolist()
-    dict_gustos = [(gust, constants.gustos_dict.get(gust, gust)) for gust in gustos]
+    #dict_gustos = [(gust, constants.gustos_dict.get(gust, gust)) for gust in gustos]
+    dict_gustos = [(gust,gust) for gust in gustos] # No translateion for the moment
 
     if request.method == 'GET':
         if len(dict_gustos) == 1:
@@ -105,12 +106,12 @@ def pregunta_4():
     global df4, df5
     tots_els_menjars = df4['FoodParing'].str.split(',').explode()
     tots_els_menjars = tots_els_menjars.str.strip()
-    menjars = tots_els_menjars.unique().tolist()+['Altres']
+    menjars = tots_els_menjars.unique().tolist()+['Others']
     error = False
     
     if request.method == 'GET':
         if len(menjars) == 1:
-            if 'Altres' in menjars:
+            if 'Others' in menjars:
                 regex_pattern = '|'.join(menjars)
                 df5 = df4[df4['FoodParing'].str.contains(regex_pattern, case=False, na=False)]
                 session['data'] = df5.to_dict(orient='records')
@@ -126,8 +127,8 @@ def pregunta_4():
             #return redirect(url_for(RECOMANACIO))
         else:        
             selected_items = request.form.getlist('Menjar')
-            if 'Altres' in selected_items:
-                selected_items.remove('Altres')
+            if 'Others' in selected_items:
+                selected_items.remove('Others')
                 if len(selected_items) == 0:
                     selected_items = menjars
             regex_pattern = '|'.join(selected_items)
