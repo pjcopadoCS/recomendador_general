@@ -16,32 +16,24 @@ def pregunta_1():
     error = False
     
     if request.method == 'GET':
-        
         df = pd.read_excel('wines_dataset.xlsx')
         session['data'] = df.to_dict(orient='records')
         
     elif request.method == 'POST':
-        
         if request.form.get("Skip"):
-            
             df2 = df
             return redirect(url_for('ocasional.pregunta_2'))
         
         if 'Tipus' not in request.form:
-        
             error = True
-        
         else:
-                 
             selected_items = request.form.getlist('Tipus')
             df2 = filtratge(df, 'Type', selected_items)
 
             if request.form.get("Next"):
-                
                 return redirect(url_for('ocasional.pregunta_2'))
             
             elif request.form.get('Recomana'):
-                
                 session['last'] = '1'
                 session['data'] = df2.to_dict(orient='records')
                 return redirect(url_for(RECOMANACIO))  
@@ -63,14 +55,13 @@ def pregunta_2():
             return redirect(url_for('ocasional.pregunta_3'))
     
     if request.method == 'POST':
+        
         if request.form.get("Skip"):
             df3 = df2
             return redirect(url_for('ocasional.pregunta_3'))
         
         if 'Alcohol' not in request.form:
-            
             error = True
-            
         else:
              
             selected_items = request.form.getlist('Alcohol')
@@ -89,7 +80,7 @@ def pregunta_2():
     return render_template('/ocasional/pregunta2.html', alcohol = dict_alcohol, error = error)
 
 
-@ocasional_bp.route('/ocasional_pregunta_3', methods = ['GET', 'POST'])
+@ocasional_bp.route('/ocasional_pregunta3', methods = ['GET', 'POST'])
 def pregunta_3():
     
     global df3, df4
@@ -101,21 +92,18 @@ def pregunta_3():
     if request.method == 'GET':
         if len(dict_gustos) == 1:
             df4 = filtratge(df3, 'Taste', dict_gustos[0])
+            session['last'] = '2' # In this case previous page is 2 
             session['data'] = df4.to_dict(orient='records')
             return redirect(url_for(RECOMANACIO))
     
     if request.method == 'POST':
-        
         session['last'] = '3'
         if 'Gust' not in request.form:
-            
             return redirect(url_for(RECOMANACIO))
         
-        else:   
-                 
+        else:    
             selected_items = request.form.getlist('Gust')
             df4 = filtratge(df3, 'Taste', selected_items)
-            
             session['data'] = df4.to_dict(orient='records')
             return redirect(url_for(RECOMANACIO))
             

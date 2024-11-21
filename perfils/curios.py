@@ -208,6 +208,7 @@ def pregunta_6():
                 session['data'] = df7.to_dict(orient='records')
             else:
                 df7 = df6
+                session['last'] = '5'
                 session['data'] = df7.to_dict(orient='records')
             return redirect(url_for(RECOMANACIO))
     
