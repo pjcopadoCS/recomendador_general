@@ -3,7 +3,7 @@
 ## Descripció
 El Recomanador general de vins és una aplicació que ajuda els usuaris a trobar vins segons el seu perfil preguntant la mínima informació possible. Utilitzant tècniques de filtratge basat en contingut, coneixement expert i una base de dades de vins, l'aplicació pot suggerir vins que s'ajustin als gustos i criteris específics dels usuaris amb el menor nombre de preguntes.
 
-Podeu accedir al recomanador utilitzant aquest enllaç: https://api-recomanador.onrender.com
+Podeu accedir al recomanador utilitzant aquest enllaç: https://recomendador-general.onrender.com/
 
 ## Instal·lació local
 
@@ -13,7 +13,7 @@ Podeu accedir al recomanador utilitzant aquest enllaç: https://api-recomanador.
 ### Passos
 #### 1. Clona el repositori:
 ```bash
-git clone https://github.com/pol-fradera/api_recomanador.git
+git clone https://github.com/pjcopadoCS/recomendador_general
 cd api_recomanador
 ```
 
@@ -37,9 +37,9 @@ py ./app.py
 ### 2. Obre el navegador i ves a http://localhost:5000.
 
 
-## Autor
-- Pol Fradera Insa - [GitHub](https://github.com/pol-fradera)
-
+## Autors
+- Angela Nebot (angela@cs.upc.edu)
+- Pedro Jesús Copado (pedro.jesus.copado@upc.edu, pcopado@cs.upc.edu)
 
 ## Informació addicional
 #### Actualitzar les llibreries ja instalades
