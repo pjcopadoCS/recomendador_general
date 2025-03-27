@@ -38,8 +38,10 @@ py ./app.py
 
 
 ## Autors
-- Angela Nebot (angela@cs.upc.edu)
-- Pedro Jesús Copado (pedro.jesus.copado@upc.edu, pcopado@cs.upc.edu)
+- Àngela Nebot (angela.nebot@upc.edu, angela@cs.upc.edu)
+- Francisco José Mugica (francisco.jose.mugica@upc.edu)
+- Pedro Jesús Copado Méndez (pedro.jesus.copado@upc.edu, pcopado@cs.upc.edu)
+
 
 ## Informació addicional
 #### Actualitzar les llibreries ja instalades
